@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OddysseyMax10Writer
+namespace OdysseyWriter
 {
     public interface ISerialReadWrite
     {

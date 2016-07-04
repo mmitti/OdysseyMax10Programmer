@@ -1,7 +1,7 @@
-﻿<Application x:Class="OddysseyMax10Writer.App"
+﻿<Application x:Class="OdysseyWriter.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:OddysseyMax10Writer"
+             xmlns:local="clr-namespace:OdysseyWriter"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

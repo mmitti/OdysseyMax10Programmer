@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OddysseyMax10Writer.SerialState
+namespace OdysseyWriter.SerialState
 {
     public class WaitContinue : ISerialState
     {
@@ -28,7 +28,7 @@ namespace OddysseyMax10Writer.SerialState
                 }
             } while (!last.StartsWith("S3 if using the MAX 10 board - when LED turns"));
 
-            rw.TryReadLine(500);
+            rw.TryReadLine(50);
             return MenuState.GetInstance().Exec(rw, s);
 
         }

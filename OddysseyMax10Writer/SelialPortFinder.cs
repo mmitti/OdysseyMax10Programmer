@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using System;
 using System.Management;
-namespace OddysseyMax10Writer
+namespace OdysseyWriter
 {
     //http://truthfullscore.hatenablog.com/entry/2014/01/10/180608
     class SelialPortFinder

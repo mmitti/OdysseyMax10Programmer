@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace OddysseyMax10Writer
+namespace OdysseyWriter
 {
     /// <summary>
     /// App.xaml の相互作用ロジック

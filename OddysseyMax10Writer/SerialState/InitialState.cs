@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OddysseyMax10Writer.SerialState
+namespace OdysseyWriter.SerialState
 {
     public class InitialState : ISerialState
     {

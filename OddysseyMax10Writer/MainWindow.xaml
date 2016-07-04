@@ -1,17 +1,63 @@
-﻿<Window x:Class="OddysseyMax10Writer.MainWindow"
+﻿<Window x:Class="OdysseyWriter.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:OddysseyMax10Writer"
+        xmlns:local="clr-namespace:OdysseyWriter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Odyssey MAX10 Programmer" Height="350" Width="400">
     <Grid Loaded="Grid_Loaded">
-        <Button x:Name="write" Content="Write" HorizontalAlignment="Left" Margin="114,139,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <TextBox x:Name="textPath" HorizontalAlignment="Left" Height="23" Margin="92,98,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-        <Button x:Name="open" Content="Open" HorizontalAlignment="Left" Margin="287,110,0,0" VerticalAlignment="Top" Width="75" Click="open_Click"/>
-        <TextBox x:Name="log" HorizontalAlignment="Left" Height="86" Margin="92,212,0,0" Text="TextBox" VerticalAlignment="Top" Width="328" IsReadOnly="True" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" TextChanged="log_TextChanged"/>
-        <Button x:Name="program" Content="Program" HorizontalAlignment="Left" Margin="212,139,0,0" VerticalAlignment="Top" Width="75" Click="program_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Odyssey MAX10 Programmer" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" FontSize="24" Grid.ColumnSpan="3"/>
 
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="JBCファイル"  HorizontalAlignment="Center" />
+            <TextBox x:Name="textPath" Height="23" Margin="0" Text="ファイルを選択してください。" IsReadOnly="True" Grid.Column="1"/>
+            <Button x:Name="open" Content="Open" Margin="0" Width="75" Click="open_Click" Grid.Column="2"/>
+        </Grid>
+        <Grid Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="70"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="connect" Content="Connect" Margin="0" Width="75" Click="connect_Click"/>
+            <Label Content="書き込み先" Grid.Column="1" HorizontalAlignment="Center"/>
+            <ComboBox x:Name="num" Grid.Column="2" />
+            <Label Content="自動書き込み" Grid.Column="3" HorizontalAlignment="Center"/>
+            <CheckBox x:Name="autowp" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True" Checked="autowp_Checked"/>
+        </Grid>
+
+        <Grid Grid.Row="3" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="write" Content="Write" Margin="0" Width="75" Click="button_Click" Grid.Column="0"/>
+            <Button x:Name="program" Content="Program" Margin="0" Width="75" Click="program_Click" Grid.Column="1"/>
+            <Button x:Name="writeprogram" Content="WR/PG" Margin="0" Width="75"  Grid.Column="2" Click="writeprogram_Click"/>
+            <Label x:Name="status" Content="ステータス" Grid.Column="5" Margin="0,0,1,0"/>
+        </Grid>
+
+        <Label Grid.Row="4" Content="ログ"></Label>
+        <TextBox x:Name="log" Margin="1" Text="" IsReadOnly="True" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" TextChanged="log_TextChanged" Grid.Row="5"/>
+       
     </Grid>
 </Window>
