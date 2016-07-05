@@ -54,7 +54,7 @@ namespace OdysseyWriter
         {
             if (mUpdate) return;
             mUpdate = true;
-            UpdateStatus("更新中");
+            UpdateStatus("更新中", true);
             await Task.Run(() => {
                 Task.Delay(1000);
                 for (int i = 0; i < 100; i++)
@@ -89,15 +89,17 @@ namespace OdysseyWriter
             await mController.Write(mPath, n);
             UpdateStatus("プログラム中 #" + n.ToString());
             await mController.Program(n);
-            UpdateStatus("完了");
+            UpdateStatus("書き込み・プログラム完了 #" + n.ToString(), true);
             UpdateCommandButton(false);
 
         }
 
-        public void UpdateStatus(string s)
+        public void UpdateStatus(string s, bool notify = false)
         {
             Dispatcher.Invoke(new Action(() => {
                 status.Content = s;
+                if (!IsVisible & notify) notif.ShowBalloonTip("Odyssey MAX10 Programmer", s, Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
+
             }));
         }
 
@@ -122,7 +124,7 @@ namespace OdysseyWriter
                 await mController.GoMenu();
                 
                 connect.Content = "Connected";
-                UpdateStatus("接続済み");
+                UpdateStatus("接続済み", true);
                 connect.IsEnabled = false;
                 mConnected = true;
             }
@@ -148,7 +150,7 @@ namespace OdysseyWriter
             UpdateCommandButton(true);
             UpdateStatus("書き込み中 #" + n.ToString());
             await mController.Write(mPath, n);
-            UpdateStatus("完了");
+            UpdateStatus("書き込み完了 #" + n.ToString(), true);
             UpdateCommandButton(false);
         }
 
@@ -185,7 +187,7 @@ namespace OdysseyWriter
             UpdateCommandButton(true);
             UpdateStatus("プログラム中 #" + n.ToString());
             await mController.Program(n);
-            UpdateStatus("完了");
+            UpdateStatus("プログラム完了 #" + n.ToString(), true);
             UpdateCommandButton(false);
         }
 
@@ -202,6 +204,28 @@ namespace OdysseyWriter
         private void autowp_Checked(object sender, RoutedEventArgs e)
         {
             if(mPath != null) mFileWatcher.EnableRaisingEvents = autowp.IsChecked == true;
+        }
+
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            if(this.WindowState == WindowState.Minimized)
+            {
+                this.Hide();
+                notif.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void notif_TrayMouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            if(this.IsVisible)
+            {
+                this.WindowState = WindowState.Minimized;
+            }
+            else
+            {
+                this.Show();
+                this.WindowState = WindowState.Normal;
+            }
         }
     }
 }

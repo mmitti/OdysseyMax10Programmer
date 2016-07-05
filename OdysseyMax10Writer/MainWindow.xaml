@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         xmlns:local="clr-namespace:OdysseyWriter"
         mc:Ignorable="d"
-        Title="Odyssey MAX10 Programmer" Height="350" Width="400">
+        Title="Odyssey MAX10 Programmer" Height="350" Width="400" StateChanged="Window_StateChanged" Icon="Assets/icon.ico">
+    
     <Grid Loaded="Grid_Loaded">
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="42"></RowDefinition>
             <RowDefinition Height="25"></RowDefinition>
@@ -15,6 +18,14 @@
             <RowDefinition Height="25"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+        <tb:TaskbarIcon x:Name="notif"
+                    Visibility="Visible"
+                    ToolTipText="Fallback ToolTip for Windows xp"
+                    MenuActivation="LeftOrRightClick"
+                    
+                    PopupActivation="DoubleClick"
+                    TrayMouseDoubleClick="notif_TrayMouseDoubleClick"
+                    IconSource="Assets/icon_tool.ico" />
         <Label Content="Odyssey MAX10 Programmer" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" FontSize="24" Grid.ColumnSpan="3"/>
 
         <Grid Grid.Row="1" >
