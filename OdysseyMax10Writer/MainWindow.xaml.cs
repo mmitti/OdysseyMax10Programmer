@@ -106,7 +106,7 @@ namespace OdysseyWriter
         private void UpdateCommandButton(bool processing = false)
         {
             writeprogram.IsEnabled = write.IsEnabled = program.IsEnabled = mConnected && mLoaded && !processing;
-            num.IsEnabled = autowp.IsEnabled = num.IsEditable = !processing;
+            autowp.IsEnabled = num.IsEnabled = !processing;
         }
 
         private async Task<bool> Connect()
