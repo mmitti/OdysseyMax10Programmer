@@ -1,15 +1,15 @@
-# OdysseyMAX10Programmer
-OdysseyMAX10�p��FPGA�v���O���}�[�ł�
+﻿# OdysseyMAX10Programmer
+OdysseyMAX10用のFPGAプログラマーです
 
-���ۂ�OdysseyMAX10 �ɏ���Ă�}�C�R���ɑ΂��ăV���A���ʐM������jbc�t�@�C�����������ނ����ł��B
+実際はOdysseyMAX10 に乗ってるマイコンに対してシリアル通信をしてjbcファイルを書き込むだけです。
 
-## ���C�Z���X
-�C��BSD���C�Z���X �ɏ������܂��B
-�l�A���p��킸�N�ł������ŗ��p�\�ł��B
-�܂��A����ɉ��ς��Ă�����Ă��\���܂��񂪁A�z�z�Ȃǂ�����ۂ͉��L�̒��쌠�\������i�Ɋ܂߂Ă��������B
-���ς����ꍇ���\�[�X�R�[�h�����J����`���͐����܂���B
-�����A�o�O��v�]����@�\���������܂����牺�L�̃A�h���X�A��������issue�ł��肢���܂��B
+## ライセンス
+修正BSDライセンス に準拠します。
+個人、商用問わず誰でも無料で利用可能です。
+また、勝手に改変してもらっても構いませんが、配布などをする際は下記の著作権表示を作品に含めてください。
+改変した場合もソースコードを公開する義務は生じません。
+もし、バグや要望する機能等ございましたら下記のアドレス、もしくはissueでお願いします。
 
-## ���쌠�\�� 
+## 著作権表示 
 (c) 2016 mmitti  
-�A���� dev@mail.mmitti.info
+連絡先 dev@mail.mmitti.info
