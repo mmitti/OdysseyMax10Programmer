@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdysseyMax10Writer", "OdysseyMax10Writer\OdysseyMax10Writer.csproj", "{EC6A5828-CC7F-4B9D-A1C0-350E5966A338}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdysseyMax10Programmer", "OdysseyMax10Programmer\OdysseyMax10Programmer.csproj", "{EC6A5828-CC7F-4B9D-A1C0-350E5966A338}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
