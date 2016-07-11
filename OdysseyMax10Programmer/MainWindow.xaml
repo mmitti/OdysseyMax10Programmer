@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <tb:TaskbarIcon x:Name="notif"
                     Visibility="Visible"
-                    ToolTipText="Fallback ToolTip for Windows xp"
+                    ToolTipText="Oddysey MAX10 Programmer"
                     MenuActivation="LeftOrRightClick"
                     
                     PopupActivation="DoubleClick"
